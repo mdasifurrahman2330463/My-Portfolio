@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Asifur Rahman | Full-Stack Software Developer & CSE Undergraduate</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#090d16',
+                            navy: '#111827',
+                            card: '#1f2937',
+                            accent: '#0ea5e9',
+                            purple: '#6366f1',
+                            pink: '#ec4899',
+                            emerald: '#10b981'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; background-color: #090d16; color: #94a3b8; }
+        .font-code { font-family: 'JetBrains Mono', monospace; }
+        .glass-nav { background: rgba(9, 13, 22, 0.85); backdrop-filter: blur(20px); }
+        .gradient-text { background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #f472b6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-border { position: relative; border-radius: 1.5rem; background: linear-gradient(135deg, #0ea5e9, #6366f1, #ec4899); padding: 2px; }
+        .gradient-border-inner { background: #111827; border-radius: calc(1.5rem - 2px); }
+        .glow-effect { box-shadow: 0 0 40px -10px rgba(14, 165, 233, 0.25); }
+        .card-glow:hover { box-shadow: 0 0 30px -5px rgba(99, 102, 241, 0.2); border-color: rgba(99, 102, 241, 0.4); }
+    </style>
+</head>
+<body class="selection:bg-brand-accent selection:text-brand-dark">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-accent via-brand-purple to-brand-pink p-0.5 shadow-lg group-hover:scale-105 transition">
+                    <div class="w-full h-full bg-brand-navy rounded-[10px] flex items-center justify-center text-brand-accent font-code font-bold text-lg">
+                        AR
+                    </div>
+                </div>
+                <div>
+                    <span class="text-white font-bold text-sm tracking-wide block">Md. Asifur Rahman</span>
+                    <span class="text-xs text-brand-accent font-code">Software Engineer</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#about" class="text-slate-300 hover:text-brand-accent transition">About</a>
+                <a href="#focus" class="text-slate-300 hover:text-brand-accent transition">Core Focus</a>
+                <a href="#projects" class="text-slate-300 hover:text-brand-accent transition">Finished Projects</a>
+                <a href="#research" class="text-slate-300 hover:text-brand-accent transition">Thesis & Future</a>
+                <a href="#skills" class="text-slate-300 hover:text-brand-accent transition">Skills</a>
+                <a href="#contact" class="text-slate-300 hover:text-brand-accent transition">Contact</a>
+                <a href="https://github.com/mdasifurrahman2330463" target="_blank" class="bg-gradient-to-r from-sky-500 to-indigo-600 hover:opacity-90 text-white px-5 py-2.5 rounded-xl font-semibold transition shadow-lg flex items-center gap-2 text-xs">
+                    <i class="fab fa-github"></i> GitHub Profile
+                </a>
+            </nav>
+
+            <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-navy border-b border-slate-800 px-6 py-5 space-y-4">
+            <a href="#about" class="block text-slate-300 hover:text-brand-accent py-1">About</a>
+            <a href="#focus" class="block text-slate-300 hover:text-brand-accent py-1">Core Focus</a>
+            <a href="#projects" class="block text-slate-300 hover:text-brand-accent py-1">Finished Projects</a>
+            <a href="#research" class="block text-slate-300 hover:text-brand-accent py-1">Thesis & Future</a>
+            <a href="#skills" class="block text-slate-300 hover:text-brand-accent py-1">Skills</a>
+            <a href="#contact" class="block text-slate-300 hover:text-brand-accent py-1">Contact</a>
+            <a href="https://github.com/mdasifurrahman2330463" target="_blank" class="inline-block bg-brand-accent text-slate-950 px-4 py-2.5 rounded-xl font-bold text-xs mt-2">GitHub Profile</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center max-w-7xl mx-auto px-6 pt-32 pb-20 relative overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-sky-500/10 rounded-full blur-[120px] -z-10"></div>
+        <div class="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-pink-500/10 rounded-full blur-[120px] -z-10"></div>
+        <div class="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[120px] -z-10"></div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2.5 bg-slate-900/90 border border-slate-700/80 px-4 py-2 rounded-full text-xs font-semibold text-sky-400 shadow-xl backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Available for Software Engineering & AI Roles
+                </div>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1]">
+                    Building the Future <br><span class="gradient-text">Through Clean Code & AI</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 font-semibold font-code">
+                    Md. Asifur Rahman &bull; Software Engineer & AI Researcher
+                </p>
+                <p class="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed mx-auto lg:mx-0">
+                    Grounded in a strong academic foundation across Data Structures & Algorithms (DSA), Software Engineering, Web & Mobile Development, Artificial Intelligence, Machine Learning, and Bioinformatics.
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#projects" class="bg-gradient-to-r from-sky-500 via-indigo-600 to-pink-600 hover:opacity-95 text-white font-bold px-8 py-4 rounded-2xl shadow-xl transition transform hover:-translate-y-0.5 flex items-center gap-2 text-sm glow-effect">
+                        <i class="fas fa-rocket"></i> Finished Projects
+                    </a>
+                    <a href="#research" class="bg-slate-900/80 hover:bg-slate-800 border border-slate-700 text-white font-bold px-8 py-4 rounded-2xl transition shadow-xl flex items-center gap-2 text-sm backdrop-blur-md">
+                        <i class="fas fa-flask"></i> Thesis & Future Ideas
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="gradient-border w-72 h-72 sm:w-84 sm:h-84 shadow-2xl">
+                    <div class="gradient-border-inner w-full h-full flex flex-col items-center justify-center p-2 text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-sky-500/5 to-pink-500/10 pointer-events-none"></div>
+                        <!-- Profile Photo Container -->
+                        <div class="w-full h-full rounded-[22px] overflow-hidden relative group shadow-inner">
+                            <img src="assets/profile.jpg" alt="Md. Asifur Rahman" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-90"></div>
+                            <div class="absolute bottom-4 left-0 right-0 text-center px-4">
+                                <h3 class="text-lg font-extrabold text-white">Md. Asifur Rahman</h3>
+                                <p class="text-[11px] text-sky-400 font-mono">Software Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering & Research Excellence Section -->
+    <section id="about" class="py-28 max-w-7xl mx-auto px-6 relative">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <span class="text-sky-400 font-code text-xs uppercase tracking-widest block mb-2">Professional Profile</span>
+            <h2 class="text-3xl font-extrabold text-white sm:text-5xl">Engineering & Research Excellence</h2>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-sky-400 to-indigo-600 mx-auto mt-4 rounded-full"></div>
+            <p class="mt-4 text-slate-400 text-lg">
+                Translating computer science theory into robust, scalable, and intelligent digital systems.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-brand-navy/80 border border-slate-800 p-8 rounded-3xl shadow-xl card-glow transition duration-300 group backdrop-blur-md">
+                <div class="w-16 h-16 bg-gradient-to-br from-sky-500/20 to-sky-500/5 border border-sky-500/30 text-sky-400 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition shadow-inner">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Software Engineering</h3>
+                <p class="text-slate-400 leading-relaxed text-sm">
+                    Grounded in systematic software engineering methodologies, modular architecture, and clean code principles to build enterprise-grade applications.
+                </p>
+            </div>
+
+            <div class="bg-brand-navy/80 border border-slate-800 p-8 rounded-3xl shadow-xl card-glow transition duration-300 group backdrop-blur-md">
+                <div class="w-16 h-16 bg-gradient-to-br from-indigo-500/20 to-indigo-500/5 border border-indigo-500/30 text-indigo-400 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition shadow-inner">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Web Development</h3>
+                <p class="text-slate-400 leading-relaxed text-sm">
+                    Crafting lightning-fast, responsive user interfaces and robust Python/Django backends for seamless full-stack web experiences.
+                </p>
+            </div>
+
+            <div class="bg-brand-navy/80 border border-slate-800 p-8 rounded-3xl shadow-xl card-glow transition duration-300 group backdrop-blur-md">
+                <div class="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 text-purple-400 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition shadow-inner">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">AI & Machine Learning</h3>
+                <p class="text-slate-400 leading-relaxed text-sm">
+                    Exploring neural networks, Naive Bayes algorithms, and probabilistic classifiers to engineer smart, data-driven software solutions.
+                </p>
+            </div>
+
+            <div class="bg-brand-navy/80 border border-slate-800 p-8 rounded-3xl shadow-xl card-glow transition duration-300 group backdrop-blur-md">
+                <div class="w-16 h-16 bg-gradient-to-br from-pink-500/20 to-pink-500/5 border border-pink-500/30 text-pink-400 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition shadow-inner">
+                    <i class="fas fa-dna"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Thesis & Bioinformatics</h3>
+                <p class="text-slate-400 leading-relaxed text-sm">
+                    Developing a Final Year Design Project thesis titled <span class="text-slate-200 font-semibold">"Multi-omics Mechanomics"</span>, blending machine learning with bioinformatics.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Academic & Development Focus -->
+    <section id="focus" class="py-28 bg-slate-900/60 border-y border-slate-800/80 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-indigo-400 font-code text-xs uppercase tracking-widest block mb-2">Core Competencies</span>
+                <h2 class="text-3xl font-extrabold text-white sm:text-5xl">Academic & Technical Pillars</h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-indigo-500 to-pink-500 mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-400 text-lg">
+                    The foundational pillars driving my technical expertise, algorithmic thinking, and intelligent system design.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Focus 1 -->
+                <div class="bg-brand-navy/90 border border-slate-800 p-8 rounded-3xl hover:border-sky-500/50 transition duration-300 group shadow-xl">
+                    <div class="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/30 text-sky-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Data Structures & Algorithms</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Rigorous focus on time complexity analysis, advanced data structures, and optimal algorithmic design for high-performance code execution.
+                    </p>
+                </div>
+
+                <!-- Focus 2 -->
+                <div class="bg-brand-navy/90 border border-slate-800 p-8 rounded-3xl hover:border-indigo-500/50 transition duration-300 group shadow-xl">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Software Engineering</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Applying software lifecycle models, agile principles, version control (Git), and rigorous testing frameworks for production readiness.
+                    </p>
+                </div>
+
+                <!-- Focus 3 -->
+                <div class="bg-brand-navy/90 border border-slate-800 p-8 rounded-3xl hover:border-purple-500/50 transition duration-300 group shadow-xl">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Web Programming</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Extensive hands-on development covering frontend interactivity (HTML, CSS, JavaScript) and robust backend logic (Python, Django).
+                    </p>
+                </div>
+
+                <!-- Focus 4 -->
+                <div class="bg-brand-navy/90 border border-slate-800 p-8 rounded-3xl hover:border-pink-500/50 transition duration-300 group shadow-xl">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/30 text-pink-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Mobile App Development</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Designing responsive, user-centric mobile applications with seamless navigation and efficient state management.
+                    </p>
+                </div>
+
+                <!-- Focus 5 -->
+                <div class="bg-brand-navy/90 border border-slate-800 p-8 rounded-3xl hover:border-emerald-500/50 transition duration-300 group shadow-xl">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Artificial Intelligence & ML</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Building intelligent models, neural networks, probabilistic classifiers, and constraint satisfaction algorithms for automated decision making.
+                    </p>
+                </div>
+
+                <!-- Focus 6 -->
+                <div class="bg-brand-navy/90 border border-slate-800 p-8 rounded-3xl hover:border-rose-500/50 transition duration-300 group shadow-xl">
+                    <div class="w-14 h-14 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-rose-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Bioinformatics Research</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Applying computational tools, multi-omics data integration, and mechanomics to analyze developing tissue architecture and biological networks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Finished Development Projects Section -->
+    <section id="projects" class="py-28 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <span class="text-pink-400 font-code text-xs uppercase tracking-widest block mb-2">Completed Work</span>
+            <h2 class="text-3xl font-extrabold text-white sm:text-5xl">Finished Development Projects</h2>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-sky-400 via-indigo-500 to-pink-500 mx-auto mt-4 rounded-full"></div>
+            <p class="mt-4 text-slate-400 text-lg">
+                Fully completed and deployed software engineering, web programming, and AI-integrated applications.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="bg-brand-navy/90 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl card-glow transition duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="bg-gradient-to-r from-sky-600 via-indigo-600 to-purple-600 p-8 text-white relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                        <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs px-3.5 py-1.5 rounded-full font-code font-bold uppercase tracking-wider">Completed Web App</span>
+                        <h3 class="text-2xl font-bold mt-4">Interactive Course Landing Page</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            A fully completed, responsive course landing page built using HTML5, CSS3, and Tailwind CSS. Features dynamic mobile menu navigation, structured syllabus cards, and clean UI/UX architecture.
+                        </p>
+                        <div class="flex flex-wrap gap-2 font-code text-xs text-slate-300">
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">HTML5</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">Tailwind CSS</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-8 pb-8 pt-0">
+                    <a href="https://github.com/mdasifurrahman2330463" target="_blank" class="text-sky-400 hover:text-sky-300 font-bold text-sm flex items-center gap-2 group-hover:translate-x-1.5 transition">
+                        <i class="fab fa-github text-lg"></i> View GitHub Repository <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="bg-brand-navy/90 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl card-glow transition duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-8 text-white relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                        <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs px-3.5 py-1.5 rounded-full font-code font-bold uppercase tracking-wider">Completed AI Web App</span>
+                        <h3 class="text-2xl font-bold mt-4">AI Model & Django Web Portal</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            A finished full-stack application developed during the Grameenphone Academy AI Bootcamp. Integrates Naive Bayes classification algorithms and perceptrons into a secure Django backend framework.
+                        </p>
+                        <div class="flex flex-wrap gap-2 font-code text-xs text-slate-300">
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">Python</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">Django</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-8 pb-8 pt-0">
+                    <a href="https://github.com/mdasifurrahman2330463" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-bold text-sm flex items-center gap-2 group-hover:translate-x-1.5 transition">
+                        <i class="fab fa-github text-lg"></i> View GitHub Repository <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="bg-brand-navy/90 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl card-glow transition duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 p-8 text-white relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                        <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs px-3.5 py-1.5 rounded-full font-code font-bold uppercase tracking-wider">Completed Tool</span>
+                        <h3 class="text-2xl font-bold mt-4">Student Academic Tracker & Portfolio</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            A finished interactive personal portfolio and assignment tracking dashboard built with modular CSS components, dynamic form validation, and responsive mobile-first layouts.
+                        </p>
+                        <div class="flex flex-wrap gap-2 font-code text-xs text-slate-300">
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">HTML5</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">Tailwind CSS</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">Git/GitHub</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-8 pb-8 pt-0">
+                    <a href="https://github.com/mdasifurrahman2330463" target="_blank" class="text-pink-400 hover:text-pink-300 font-bold text-sm flex items-center gap-2 group-hover:translate-x-1.5 transition">
+                        <i class="fab fa-github text-lg"></i> View GitHub Repository <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="bg-brand-navy/90 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl card-glow transition duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 p-8 text-white relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                        <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs px-3.5 py-1.5 rounded-full font-code font-bold uppercase tracking-wider">Completed Web Platform</span>
+                        <h3 class="text-2xl font-bold mt-4">Full-Stack Task & Note Management System</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            A fully completed task management web application built with Python and Django. Features user authentication, CRUD operations, database integration, and responsive styling.
+                        </p>
+                        <div class="flex flex-wrap gap-2 font-code text-xs text-slate-300">
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">Python</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">Django</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">SQLite</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-8 pb-8 pt-0">
+                    <a href="https://github.com/mdasifurrahman2330463" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-bold text-sm flex items-center gap-2 group-hover:translate-x-1.5 transition">
+                        <i class="fab fa-github text-lg"></i> View GitHub Repository <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="bg-brand-navy/90 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl card-glow transition duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 p-8 text-white relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                        <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs px-3.5 py-1.5 rounded-full font-code font-bold uppercase tracking-wider">Completed Frontend App</span>
+                        <h3 class="text-2xl font-bold mt-4">Dynamic E-Commerce Product Catalog UI</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            A fully completed dynamic storefront interface featuring real-time product filtering, search capabilities, interactive shopping cart management, and modern CSS grid layouts.
+                        </p>
+                        <div class="flex flex-wrap gap-2 font-code text-xs text-slate-300">
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">JavaScript (ES6+)</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">CSS3</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">DOM Manipulation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-8 pb-8 pt-0">
+                    <a href="https://github.com/mdasifurrahman2330463" target="_blank" class="text-cyan-400 hover:text-cyan-300 font-bold text-sm flex items-center gap-2 group-hover:translate-x-1.5 transition">
+                        <i class="fab fa-github text-lg"></i> View GitHub Repository <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="bg-brand-navy/90 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl card-glow transition duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 p-8 text-white relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                        <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs px-3.5 py-1.5 rounded-full font-code font-bold uppercase tracking-wider">Completed Responsive App</span>
+                        <h3 class="text-2xl font-bold mt-4">Interactive Weather & Analytics Dashboard</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            A completed responsive dashboard interface integrating asynchronous API calls (`fetch`), JSON data handling, dynamic charting widgets, and clean CSS styling for multi-device compatibility.
+                        </p>
+                        <div class="flex flex-wrap gap-2 font-code text-xs text-slate-300">
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">REST APIs</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">Async JS</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-8 pb-8 pt-0">
+                    <a href="https://github.com/mdasifurrahman2330463" target="_blank" class="text-amber-400 hover:text-amber-300 font-bold text-sm flex items-center gap-2 group-hover:translate-x-1.5 transition">
+                        <i class="fab fa-github text-lg"></i> View GitHub Repository <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thesis & Future Research / Project Ideas Section -->
+    <section id="research" class="py-28 bg-slate-900/60 border-y border-slate-800/80 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-emerald-400 font-code text-xs uppercase tracking-widest block mb-2">Research & Innovation</span>
+                <h2 class="text-3xl font-extrabold text-white sm:text-5xl">Thesis & Future Project Ideas</h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-emerald-400 to-sky-500 mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-400 text-lg">
+                    Forward-looking research directions and AI-powered bioinformatics project proposals aligned with my academic focus.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Current Thesis -->
+                <div class="bg-brand-navy/90 border border-emerald-500/40 p-8 rounded-3xl shadow-xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-emerald-500/10 text-emerald-400 text-xs font-mono px-4 py-1.5 rounded-bl-2xl font-bold border-l border-b border-emerald-500/30">Current Thesis Research</div>
+                    <div class="w-14 h-14 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mb-6 mt-2">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Multi-omics Mechanomics of Developing Tissue Architecture</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Investigating mechanobiological forces and multi-omics data integration during tissue development. Utilizing machine learning algorithms to model spatial and temporal architectural changes in cellular structures.
+                    </p>
+                    <div class="flex flex-wrap gap-2 font-code text-xs text-emerald-300 pt-4 border-t border-slate-800">
+                        <span class="bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-xl">Machine Learning</span>
+                        <span class="bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-xl">Bioinformatics</span>
+                        <span class="bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-xl">Data Pipelines</span>
+                    </div>
+                </div>
+
+                <!-- Future Idea 1 -->
+                <div class="bg-brand-navy/90 border border-slate-800 p-8 rounded-3xl shadow-xl hover:border-sky-500/40 transition">
+                    <div class="absolute top-0 right-0 bg-sky-500/10 text-sky-400 text-xs font-mono px-4 py-1.5 rounded-bl-2xl font-bold border-l border-b border-sky-500/30">Future Project Proposal</div>
+                    <div class="w-14 h-14 bg-sky-500/10 border border-sky-500/30 text-sky-400 rounded-2xl flex items-center justify-center text-2xl mb-6 mt-2">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">AI-Powered Genomic Variant Classifier</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        An intelligent web platform leveraging deep learning and NLP to analyze genomic sequencing datasets, predict pathogenic mutations, and automate variant effect annotation for personalized medicine.
+                    </p>
+                    <div class="flex flex-wrap gap-2 font-code text-xs text-sky-300 pt-4 border-t border-slate-800">
+                        <span class="bg-sky-500/10 border border-sky-500/20 px-3 py-1.5 rounded-xl">Deep Learning</span>
+                        <span class="bg-sky-500/10 border border-sky-500/20 px-3 py-1.5 rounded-xl">Genomics</span>
+                        <span class="bg-sky-500/10 border border-sky-500/20 px-3 py-1.5 rounded-xl">Django / FastAPI</span>
+                    </div>
+                </div>
+
+                <!-- Future Idea 2 -->
+                <div class="bg-brand-navy/90 border border-slate-800 p-8 rounded-3xl shadow-xl hover:border-indigo-500/40 transition">
+                    <div class="absolute top-0 right-0 bg-indigo-500/10 text-indigo-400 text-xs font-mono px-4 py-1.5 rounded-bl-2xl font-bold border-l border-b border-indigo-500/30">Future Research Direction</div>
+                    <div class="w-14 h-14 bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 rounded-2xl flex items-center justify-center text-2xl mb-6 mt-2">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Graph Neural Networks for Drug Discovery</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Applying Graph Neural Networks (GNNs) to molecular structures to predict drug-target interactions and molecular properties, accelerating computational drug discovery pipelines.
+                    </p>
+                    <div class="flex flex-wrap gap-2 font-code text-xs text-indigo-300 pt-4 border-t border-slate-800">
+                        <span class="bg-indigo-500/10 border border-indigo-500/20 px-3 py-1.5 rounded-xl">Graph Neural Networks</span>
+                        <span class="bg-indigo-500/10 border border-indigo-500/20 px-3 py-1.5 rounded-xl">Cheminformatics</span>
+                    </div>
+                </div>
+
+                <!-- Future Idea 3 -->
+                <div class="bg-brand-navy/90 border border-slate-800 p-8 rounded-3xl shadow-xl hover:border-pink-500/40 transition">
+                    <div class="absolute top-0 right-0 bg-pink-500/10 text-pink-400 text-xs font-mono px-4 py-1.5 rounded-bl-2xl font-bold border-l border-b border-pink-500/30">Software Engineering System</div>
+                    <div class="w-14 h-14 bg-pink-500/10 border border-pink-500/30 text-pink-400 rounded-2xl flex items-center justify-center text-2xl mb-6 mt-2">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Distributed Multi-omics Database & API</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        A high-performance distributed backend system optimized using advanced DSA principles to store, query, and stream massive biological datasets for research institutions.
+                    </p>
+                    <div class="flex flex-wrap gap-2 font-code text-xs text-pink-300 pt-4 border-t border-slate-800">
+                        <span class="bg-pink-500/10 border border-pink-500/20 px-3 py-1.5 rounded-xl">Distributed Systems</span>
+                        <span class="bg-pink-500/10 border border-pink-500/20 px-3 py-1.5 rounded-xl">Optimized DSA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-28 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <span class="text-sky-400 font-code text-xs uppercase tracking-widest block mb-2">Technical Mastery</span>
+            <h2 class="text-3xl font-extrabold text-white sm:text-5xl">Skills & Proficiency</h2>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-sky-400 to-indigo-600 mx-auto mt-4 rounded-full"></div>
+            <p class="mt-4 text-slate-400 text-lg">
+                Comprehensive skill set spanning programming foundations, AI/ML, software engineering, and web/mobile development.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-brand-navy/90 border border-slate-800 p-8 rounded-3xl shadow-xl">
+                <h3 class="text-xl font-bold text-white mb-6 font-code flex items-center gap-3">
+                    <i class="fas fa-code text-sky-400"></i> Frontend & Mobile
+                </h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-slate-300 mb-2">
+                            <span>HTML5 / CSS3 / Tailwind</span>
+                            <span class="text-sky-400 font-code">95%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                            <div class="bg-gradient-to-r from-sky-400 to-indigo-500 h-full rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-slate-300 mb-2">
+                            <span>JavaScript (ES6+)</span>
+                            <span class="text-sky-400 font-code">88%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                            <div class="bg-gradient-to-r from-sky-400 to-indigo-500 h-full rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-slate-300 mb-2">
+                            <span>Mobile App UI Design</span>
+                            <span class="text-sky-400 font-code">85%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                            <div class="bg-gradient-to-r from-sky-400 to-indigo-500 h-full rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-brand-navy/90 border border-slate-800 p-8 rounded-3xl shadow-xl">
+                <h3 class="text-xl font-bold text-white mb-6 font-code flex items-center gap-3">
+                    <i class="fas fa-brain text-indigo-400"></i> AI & Machine Learning
+                </h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-slate-300 mb-2">
+                            <span>Python & Django / FastAPI</span>
+                            <span class="text-indigo-400 font-code">92%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                            <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-full rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-slate-300 mb-2">
+                            <span>Machine Learning & Neural Nets</span>
+                            <span class="text-indigo-400 font-code">88%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                            <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-full rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-slate-300 mb-2">
+                            <span>Probabilistic Classifiers</span>
+                            <span class="text-indigo-400 font-code">90%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                            <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-full rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-brand-navy/90 border border-slate-800 p-8 rounded-3xl shadow-xl">
+                <h3 class="text-xl font-bold text-white mb-6 font-code flex items-center gap-3">
+                    <i class="fas fa-tools text-pink-400"></i> Core CSE & Workflow
+                </h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-slate-300 mb-2">
+                            <span>DSA & Algorithmic Design</span>
+                            <span class="text-pink-400 font-code">92%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                            <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-full rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-slate-300 mb-2">
+                            <span>Software Engineering Patterns</span>
+                            <span class="text-pink-400 font-code">90%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                            <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-full rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-slate-300 mb-2">
+                            <span>Git, GitHub & AI Assistance</span>
+                            <span class="text-pink-400 font-code">95%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-3 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                            <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-full rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-28 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <span class="text-indigo-400 font-code text-xs uppercase tracking-widest block mb-2">Get In Touch</span>
+            <h2 class="text-3xl font-extrabold text-white sm:text-5xl">Let's Build Together</h2>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-sky-400 via-indigo-500 to-pink-500 mx-auto mt-4 rounded-full"></div>
+            <p class="mt-4 text-slate-400 text-lg">
+                Have questions about my AI projects or software engineering work? Send me a message!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-5 space-y-6">
+                <div class="bg-brand-navy/90 border border-slate-800 p-8 rounded-3xl shadow-xl space-y-6 backdrop-blur-md">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-14 h-14 bg-sky-500/10 text-sky-400 border border-sky-500/30 rounded-2xl flex items-center justify-center text-xl flex-shrink-0 shadow-inner">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Email Address</h4>
+                            <a href="mailto:mdasifurrahman624@gmail.com" class="text-sky-400 hover:underline mt-1 block font-code text-sm">mdasifurrahman624@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-14 h-14 bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 rounded-2xl flex items-center justify-center text-xl flex-shrink-0 shadow-inner">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">GitHub Profile</h4>
+                            <a href="https://github.com/mdasifurrahman2330463" target="_blank" class="text-indigo-400 hover:underline mt-1 block font-code text-sm">github.com/mdasifurrahman2330463</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-14 h-14 bg-pink-500/10 text-pink-400 border border-pink-500/30 rounded-2xl flex items-center justify-center text-xl flex-shrink-0 shadow-inner">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Institution & Location</h4>
+                            <p class="text-slate-400 mt-1 text-sm">United International University (UIU)<br>Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <div class="bg-brand-navy/90 border border-slate-800 p-8 sm:p-10 rounded-3xl shadow-xl backdrop-blur-md">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-300 mb-2">Your Name</label>
+                            <input type="text" required class="w-full px-5 py-4 bg-slate-900 border border-slate-700 rounded-2xl focus:ring-2 focus:ring-sky-500 focus:border-transparent text-white outline-none transition" placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-300 mb-2">Your Email</label>
+                            <input type="email" required class="w-full px-5 py-4 bg-slate-900 border border-slate-700 rounded-2xl focus:ring-2 focus:ring-sky-500 focus:border-transparent text-white outline-none transition" placeholder="Enter your email">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-300 mb-2">Message</label>
+                            <textarea rows="4" required class="w-full px-5 py-4 bg-slate-900 border border-slate-700 rounded-2xl focus:ring-2 focus:ring-sky-500 focus:border-transparent text-white outline-none transition" placeholder="Write your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-sky-500 via-indigo-600 to-pink-600 hover:opacity-95 text-white font-bold py-4 rounded-2xl transition shadow-xl flex items-center justify-center gap-2 text-base glow-effect">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <div id="form-success" class="hidden text-emerald-400 text-center font-medium">Thank you! Your message has been sent successfully.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy py-12 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-slate-400">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-400 to-indigo-600 flex items-center justify-center font-bold text-white font-code shadow-lg">
+                    AR
+                </div>
+                <div>
+                    <span class="font-bold text-white block">Md. Asifur Rahman</span>
+                    <span class="text-xs text-sky-400 font-code">Software Engineer & AI Developer</span>
+                </div>
+            </div>
+            <p class="text-center font-code text-xs">
+                &copy; 2026 Md. Asifur Rahman. Built with HTML5 & Tailwind CSS.
+            </p>
+            <div class="flex space-x-4">
+                <a href="https://github.com/mdasifurrahman2330463" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-sky-400 hover:bg-slate-700 transition shadow"><i class="fab fa-github"></i></a>
+                <a href="mailto:mdasifurrahman624@gmail.com" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-sky-400 hover:bg-slate-700 transition shadow"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Contact Form Simulation
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const successMsg = document.getElementById('form-success');
+                successMsg.classList.remove('hidden');
+                event.target.reset();
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                }, 5000);
+            });
+        }
+    </script>
+</body>
+</html>
